@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -35,9 +36,14 @@ import {
   Settings as SettingsIcon,
   Download as DownloadIcon,
   Description as DocumentIcon,
+  ArrowBack as ArrowBackIcon,
 } from "@mui/icons-material";
+import { useBranding } from "../contexts/BrandingContext";
 
 const ProfilePage = ({ role }) => {
+  const navigate = useNavigate();
+  const { branding, updateBranding } = useBranding();
+
   const [profile, setProfile] = useState({
     name: "",
     email: "",
@@ -53,7 +59,7 @@ const ProfilePage = ({ role }) => {
   const [settings, setSettings] = useState({
     emailNotifications: true,
     smsNotifications: false,
-    darkMode: false,
+    darkMode: branding.darkMode || false,
     language: "en",
   });
 
@@ -238,14 +244,14 @@ const ProfilePage = ({ role }) => {
 
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
-      <Typography
-        variant="h4"
-        component="h1"
-        gutterBottom
-        sx={{ mb: 4, fontWeight: "bold" }}
-      >
-        My Profile
-      </Typography>
+      <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
+        <IconButton onClick={() => navigate(-1)} sx={{ mr: 2 }}>
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography variant="h4" component="h1" sx={{ fontWeight: "bold" }}>
+          My Profile
+        </Typography>
+      </Box>
 
       <Grid container spacing={3}>
         <Grid item xs={12} md={4}>
@@ -682,9 +688,11 @@ const ProfilePage = ({ role }) => {
               control={
                 <Switch
                   checked={settings.darkMode}
-                  onChange={(e) =>
-                    setSettings({ ...settings, darkMode: e.target.checked })
-                  }
+                  onChange={(e) => {
+                    const newDarkMode = e.target.checked;
+                    setSettings({ ...settings, darkMode: newDarkMode });
+                    updateBranding({ darkMode: newDarkMode });
+                  }}
                 />
               }
               label="Dark Mode"

@@ -1,13 +1,20 @@
 import { createTheme } from "@mui/material/styles";
 
 export const createDynamicTheme = (branding) => {
+  const isDark = branding.darkMode || false;
+
   return createTheme({
     palette: {
+      mode: isDark ? "dark" : "light",
       primary: {
         main: branding.primaryColor || "#667eea",
       },
       secondary: {
         main: branding.secondaryColor || "#764ba2",
+      },
+      background: {
+        default: isDark ? "#121212" : "#f5f5f5",
+        paper: isDark ? "#1e1e1e" : "#ffffff",
       },
     },
     typography: {
@@ -18,7 +25,7 @@ export const createDynamicTheme = (branding) => {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            backgroundColor: "#f5f5f5",
+            backgroundColor: isDark ? "#121212" : "#f5f5f5",
           },
         },
       },

@@ -125,7 +125,9 @@
     "password": "Principal#12",
     "role": "principal",
     "schoolName": "Sample School",
-    "approved": true
+    "approved": true,
+    "firstName": "Shankar",
+    "lastName": "dada"
   },
   {
     "id": 15,
@@ -294,9 +296,15 @@
     "approved": false,
     "status": "pending",
     "createdAt": "2025-12-17T07:02:00.879Z",
-    "experienceDocuments": ["4e6aa8e26fda9bbb1e3d0d6d39a037a4"],
-    "educationDocuments": ["0b354c58f3e437219a2c5e25d3b6d033"],
-    "otherDocuments": ["4958b5d26a86d6472fa68899e0835efb"]
+    "experienceDocuments": [
+      "4e6aa8e26fda9bbb1e3d0d6d39a037a4"
+    ],
+    "educationDocuments": [
+      "0b354c58f3e437219a2c5e25d3b6d033"
+    ],
+    "otherDocuments": [
+      "4958b5d26a86d6472fa68899e0835efb"
+    ]
   },
   {
     "id": 29,
@@ -311,8 +319,12 @@
     "status": "pending",
     "createdAt": "2025-12-17T07:14:42.714Z",
     "parentEmail": "chiranjeevi23@gmail.com",
-    "educationDocuments": ["642a792fe474d240e086f8e9ae6b256d"],
-    "otherDocuments": ["d35224aa09f03faf35b6f740504ed4dd"]
+    "educationDocuments": [
+      "642a792fe474d240e086f8e9ae6b256d"
+    ],
+    "otherDocuments": [
+      "d35224aa09f03faf35b6f740504ed4dd"
+    ]
   },
   {
     "id": 30,
@@ -329,7 +341,9 @@
     "approved": true,
     "status": "approved",
     "createdAt": "2025-12-17T07:14:42.952Z",
-    "documents": ["b0a5bfa2d9874b9e2bbdf3fc963d9b6f"]
+    "documents": [
+      "b0a5bfa2d9874b9e2bbdf3fc963d9b6f"
+    ]
   },
   {
     "id": 31,
@@ -343,9 +357,15 @@
     "approved": true,
     "status": "approved",
     "createdAt": "2025-12-17T10:13:54.245Z",
-    "experienceDocuments": ["368cdcf2f08ca2f2b009208f71280ebe"],
-    "educationDocuments": ["310d7eb2a433bbfa89b01065ab1eb02c"],
-    "otherDocuments": ["54e9952864c25136adef83f9fa8c5285"]
+    "experienceDocuments": [
+      "368cdcf2f08ca2f2b009208f71280ebe"
+    ],
+    "educationDocuments": [
+      "310d7eb2a433bbfa89b01065ab1eb02c"
+    ],
+    "otherDocuments": [
+      "54e9952864c25136adef83f9fa8c5285"
+    ]
   },
   {
     "id": 32,
@@ -360,8 +380,12 @@
     "status": "pending",
     "createdAt": "2025-12-17T12:42:29.002Z",
     "parentEmail": "kesav@gmail.com",
-    "educationDocuments": ["3362ddbaa39d438e1031c1bd916fdf8b"],
-    "otherDocuments": ["b9cc81c78885171afd4efd8d1cbfd057"]
+    "educationDocuments": [
+      "3362ddbaa39d438e1031c1bd916fdf8b"
+    ],
+    "otherDocuments": [
+      "b9cc81c78885171afd4efd8d1cbfd057"
+    ]
   },
   {
     "id": 33,
@@ -378,7 +402,9 @@
     "approved": true,
     "status": "approved",
     "createdAt": "2025-12-17T12:42:29.209Z",
-    "documents": ["cae2c46eb8e077a1b6dc68317feb62b6"]
+    "documents": [
+      "cae2c46eb8e077a1b6dc68317feb62b6"
+    ]
   },
   {
     "id": 34,
@@ -393,8 +419,12 @@
     "status": "approved",
     "createdAt": "2025-12-17T12:44:59.914Z",
     "parentEmail": "kesari23@gmail.com",
-    "educationDocuments": ["637ae26286ec4e85a114c8e1aac8239d"],
-    "otherDocuments": ["ade85bdc2b3987fa9f34ae5340ce526b"]
+    "educationDocuments": [
+      "637ae26286ec4e85a114c8e1aac8239d"
+    ],
+    "otherDocuments": [
+      "ade85bdc2b3987fa9f34ae5340ce526b"
+    ]
   },
   {
     "id": 35,
@@ -411,7 +441,9 @@
     "approved": true,
     "status": "approved",
     "createdAt": "2025-12-17T12:45:00.224Z",
-    "documents": ["7e04ca91b907da4d8accf8cf74110dfc"]
+    "documents": [
+      "7e04ca91b907da4d8accf8cf74110dfc"
+    ]
   },
   {
     "id": 36,
@@ -425,9 +457,15 @@
     "approved": true,
     "status": "approved",
     "createdAt": "2025-12-18T09:44:04.384Z",
-    "experienceDocuments": ["dfb7ac6af70ab49b9794ea1a6cc2bd79"],
-    "educationDocuments": ["da210e7f1a79d82b7f377ef0bdbd6bd6"],
-    "otherDocuments": ["6d45adb87f1295b60e0b91b5017c8b1e"]
+    "experienceDocuments": [
+      "dfb7ac6af70ab49b9794ea1a6cc2bd79"
+    ],
+    "educationDocuments": [
+      "da210e7f1a79d82b7f377ef0bdbd6bd6"
+    ],
+    "otherDocuments": [
+      "6d45adb87f1295b60e0b91b5017c8b1e"
+    ]
   },
   {
     "id": 37,
@@ -442,6 +480,8 @@
     "status": "pending",
     "createdAt": "2025-12-18T09:50:50.326Z",
     "schoolDescription": "hi hello",
-    "documents": ["9c59df1f4bea245a17de610b1cf1eead"]
+    "documents": [
+      "9c59df1f4bea245a17de610b1cf1eead"
+    ]
   }
 ]

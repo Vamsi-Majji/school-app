@@ -19,6 +19,14 @@ import {
   CircularProgress,
   Chip,
   Grow,
+  Container,
+  Paper,
+  Stepper,
+  Step,
+  StepLabel,
+  Alert,
+  Button,
+  LinearProgress,
 } from "@mui/material";
 import {
   School as SchoolIcon,
@@ -28,10 +36,11 @@ import {
   Visibility,
   VisibilityOff,
   CheckCircle,
-  Error,
+  Error as ErrorIcon,
   CloudUpload,
+  ArrowBack,
+  ArrowForward,
 } from "@mui/icons-material";
-import "./SignUp.css";
 
 const SignUp = () => {
   const [step, setStep] = useState(1);
@@ -733,46 +742,213 @@ const SignUp = () => {
     }
   };
 
+  const steps = [
+    "School Selection",
+    "Role Selection",
+    "Personal Info",
+    "Account Setup",
+    ...(formData.role === "student"
+      ? ["Parent Info", "Documents"]
+      : formData.role === "principal"
+      ? ["School Details", "Documents"]
+      : formData.role === "teacher"
+      ? ["Teaching Details", "Documents"]
+      : ["Documents"]),
+  ];
+
   return (
-    <div className="signup-container">
-      <div className="signup-form">
-        <div className="progress-bar">
-          <div
-            className="progress"
-            style={{ width: `${(step / getTotalSteps()) * 100}%` }}
-          ></div>
-        </div>
-        {renderStep()}
-        {error && <div className="error-message">{error}</div>}
-        <div className="button-group">
+    <Container
+      component="main"
+      maxWidth="md"
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        py: 4,
+      }}
+    >
+      <Paper
+        elevation={6}
+        sx={{
+          p: 4,
+          width: "100%",
+          maxWidth: 600,
+          borderRadius: 3,
+          background: "rgba(255, 255, 255, 0.95)",
+          backdropFilter: "blur(20px)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+        }}
+      >
+        <Box sx={{ mb: 4, textAlign: "center" }}>
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              fontWeight: 700,
+              mb: 2,
+            }}
+          >
+            Join Our School Community
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            Create your account and become part of our educational ecosystem
+          </Typography>
+        </Box>
+
+        <Box sx={{ mb: 4 }}>
+          <Stepper activeStep={step - 1} alternativeLabel>
+            {steps.map((label, index) => (
+              <Step key={label}>
+                <StepLabel
+                  sx={{
+                    "& .MuiStepLabel-label": {
+                      fontSize: "0.75rem",
+                      fontWeight: index === step - 1 ? 600 : 400,
+                    },
+                  }}
+                >
+                  {label}
+                </StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Box>
+
+        <Box sx={{ mb: 2 }}>
+          <LinearProgress
+            variant="determinate"
+            value={(step / getTotalSteps()) * 100}
+            sx={{
+              height: 6,
+              borderRadius: 3,
+              backgroundColor: "rgba(102, 126, 234, 0.1)",
+              "& .MuiLinearProgress-bar": {
+                background: "linear-gradient(90deg, #667eea, #764ba2)",
+                borderRadius: 3,
+              },
+            }}
+          />
+        </Box>
+
+        <Fade in={true} timeout={500}>
+          <Box>{renderStep()}</Box>
+        </Fade>
+
+        {error && (
+          <Alert
+            severity={error.includes("successful") ? "success" : "error"}
+            sx={{ mb: 2 }}
+            icon={
+              error.includes("successful") ? <CheckCircle /> : <ErrorIcon />
+            }
+          >
+            {error}
+          </Alert>
+        )}
+
+        <Box sx={{ display: "flex", justifyContent: "space-between", mt: 4 }}>
           {step > 1 && (
-            <button type="button" onClick={prevStep} className="btn-secondary">
+            <Button
+              variant="outlined"
+              onClick={prevStep}
+              startIcon={<ArrowBack />}
+              sx={{
+                borderRadius: 2,
+                px: 3,
+                py: 1.5,
+                borderColor: "rgba(102, 126, 234, 0.5)",
+                color: "#667eea",
+                "&:hover": {
+                  borderColor: "#667eea",
+                  backgroundColor: "rgba(102, 126, 234, 0.1)",
+                },
+              }}
+            >
               Previous
-            </button>
+            </Button>
           )}
+          <Box sx={{ flex: 1 }} />
           {step < getTotalSteps() ? (
-            <button type="button" onClick={nextStep} className="btn-primary">
+            <Button
+              variant="contained"
+              onClick={nextStep}
+              endIcon={<ArrowForward />}
+              sx={{
+                borderRadius: 2,
+                px: 3,
+                py: 1.5,
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                boxShadow: "0 4px 15px rgba(102, 126, 234, 0.3)",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)",
+                },
+                transition: "all 0.3s ease",
+              }}
+            >
               Next
-            </button>
+            </Button>
           ) : (
-            <button
-              type="button"
+            <Button
+              variant="contained"
               onClick={handleSubmit}
               disabled={loading}
-              className="btn-primary"
+              sx={{
+                borderRadius: 2,
+                px: 4,
+                py: 1.5,
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                boxShadow: "0 4px 15px rgba(102, 126, 234, 0.3)",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)",
+                },
+                "&:disabled": {
+                  background: "#6c757d",
+                  transform: "none",
+                  boxShadow: "none",
+                },
+                transition: "all 0.3s ease",
+              }}
             >
-              {loading ? "Creating Account..." : "Sign Up"}
-            </button>
+              {loading ? (
+                <>
+                  <CircularProgress size={20} sx={{ mr: 1, color: "white" }} />
+                  Creating Account...
+                </>
+              ) : (
+                "Sign Up"
+              )}
+            </Button>
           )}
-        </div>
-        <div className="login-link">
-          Already have an account?{" "}
-          <button onClick={() => navigate("/login")} className="link-btn">
-            Login
-          </button>
-        </div>
-      </div>
-    </div>
+        </Box>
+
+        <Box sx={{ textAlign: "center", mt: 3 }}>
+          <Typography variant="body2" color="text.secondary">
+            Already have an account?{" "}
+            <Button
+              variant="text"
+              onClick={() => navigate("/login")}
+              sx={{
+                color: "#667eea",
+                textTransform: "none",
+                fontWeight: 600,
+                "&:hover": {
+                  backgroundColor: "rgba(102, 126, 234, 0.1)",
+                },
+              }}
+            >
+              Sign In
+            </Button>
+          </Typography>
+        </Box>
+      </Paper>
+    </Container>
   );
 };
 
