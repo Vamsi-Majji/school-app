@@ -26,7 +26,10 @@ import { useBranding } from "../contexts/BrandingContext";
 
 const BrandingPage = ({ role }) => {
   const { branding, updateBranding, resetBranding } = useBranding();
-  const [localSettings, setLocalSettings] = useState(branding);
+  const [localSettings, setLocalSettings] = useState({
+    ...branding,
+    darkMode: branding.darkMode || false,
+  });
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: "",

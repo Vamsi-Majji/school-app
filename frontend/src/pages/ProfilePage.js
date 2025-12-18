@@ -134,9 +134,51 @@ const ProfilePage = ({ role }) => {
     }
   };
 
-  const handleSave = () => {
-    // Save profile data
-    setIsEditing(false);
+  const handleSave = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      // Split the name into firstName and lastName
+      const nameParts = profile.name.trim().split(" ");
+      const firstName = nameParts[0] || "";
+      const lastName = nameParts.slice(1).join(" ") || "";
+
+      const response = await fetch("/api/users/profile", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          phone: profile.phone,
+          address: profile.address,
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        // Update local state with saved data
+        setUserData(result.user);
+        setProfile({
+          name: `${result.user.firstName} ${result.user.lastName}`,
+          email: result.user.email,
+          phone: result.user.phone || "",
+          address: result.user.address || "",
+          studentId: result.user.id,
+          avatar: profile.avatar, // Keep avatar as it's not saved to backend
+        });
+        setIsEditing(false);
+        // Show success message (you could add a snackbar here)
+        console.log("Profile updated successfully");
+      } else {
+        console.error("Failed to save profile");
+        // Show error message (you could add a snackbar here)
+      }
+    } catch (error) {
+      console.error("Error saving profile:", error);
+      // Show error message (you could add a snackbar here)
+    }
   };
 
   const handleCancel = () => {
@@ -340,46 +382,228 @@ const ProfilePage = ({ role }) => {
                 Account Statistics
               </Typography>
               <Grid container spacing={2}>
-                <Grid item xs={6} sm={3}>
-                  <Box sx={{ textAlign: "center" }}>
-                    <Typography variant="h4" color="primary">
-                      15
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Assignments Completed
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Box sx={{ textAlign: "center" }}>
-                    <Typography variant="h4" color="primary">
-                      92%
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Average Grade
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Box sx={{ textAlign: "center" }}>
-                    <Typography variant="h4" color="primary">
-                      95%
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Attendance Rate
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Box sx={{ textAlign: "center" }}>
-                    <Typography variant="h4" color="primary">
-                      8
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Active Courses
-                    </Typography>
-                  </Box>
-                </Grid>
+                {role === "student" && (
+                  <>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.assignmentsCompleted || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Assignments Completed
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.averageGrade || "N/A"}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Average Grade
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.attendanceRate || "N/A"}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Attendance Rate
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.activeCourses || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Active Courses
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
+                {role === "teacher" && (
+                  <>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.classesTaught || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Classes Taught
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.studentsCount || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Total Students
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.assignmentsGraded || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Assignments Graded
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.experienceYears || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Years Experience
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
+                {role === "principal" && (
+                  <>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.totalStudents || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Total Students
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.totalTeachers || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Total Teachers
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.schoolRating || "N/A"}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          School Rating
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.yearsAsPrincipal || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Years as Principal
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
+                {role === "accountant" && (
+                  <>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          ₹{userData?.totalRevenue || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Total Revenue
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.pendingInvoices || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Pending Invoices
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          ₹{userData?.monthlyExpenses || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Monthly Expenses
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.payrollProcessed || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Payroll Processed
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
+                {!["student", "teacher", "principal", "accountant"].includes(
+                  role
+                ) && (
+                  <>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.tasksCompleted || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Tasks Completed
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.performanceRating || "N/A"}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Performance Rating
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.workingHours || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Working Hours
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={3}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <Typography variant="h4" color="primary">
+                          {userData?.yearsOfService || 0}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Years of Service
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
               </Grid>
             </CardContent>
           </Card>

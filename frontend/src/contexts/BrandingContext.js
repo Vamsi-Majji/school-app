@@ -66,6 +66,7 @@ export const BrandingProvider = ({ children }) => {
       fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       showLogo: true,
       showSchoolName: true,
+      darkMode: false,
       customCSS: "",
     };
     setBranding(defaultBranding);

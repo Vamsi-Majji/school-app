@@ -110,6 +110,7 @@ const Login = () => {
       login({
         username: formData.email.trim(),
         password: formData.password.trim(),
+        role: formData.role,
       })
     );
   };

@@ -14,17 +14,20 @@ router.post("/login", async (req, res) => {
     // trim incoming credentials
     const usernameOrEmail = (req.body.username || req.body.email || "").trim();
     const password = (req.body.password || "").trim();
+    const selectedRole = (req.body.role || "").trim();
 
     // log for debugging (do NOT log raw password in production)
     console.log(
       "Login attempt for:",
       usernameOrEmail,
       "passwordLength:",
-      password.length
+      password.length,
+      "selectedRole:",
+      selectedRole
     );
 
-    if (!usernameOrEmail || !password) {
-      return res.status(400).json({ message: "Missing credentials" });
+    if (!usernameOrEmail || !password || !selectedRole) {
+      return res.status(400).json({ message: "Missing credentials or role" });
     }
 
     const usersPath = path.join(__dirname, "..", "data", "users.json");
@@ -56,6 +59,13 @@ router.post("/login", async (req, res) => {
 
     if (user.approved === false) {
       return res.status(403).json({ message: "User not approved" });
+    }
+
+    // Check if selected role matches user's actual role
+    if (user.role !== selectedRole) {
+      return res
+        .status(401)
+        .json({ message: "Role mismatch. Please select the correct role." });
     }
 
     // Generate JWT token

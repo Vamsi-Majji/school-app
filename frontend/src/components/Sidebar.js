@@ -249,7 +249,9 @@ const Sidebar = ({ role }) => {
           sx={{
             "& .MuiDrawer-paper": {
               width: "280px",
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              background: `linear-gradient(135deg, ${
+                branding.primaryColor || "#667eea"
+              } 0%, ${branding.secondaryColor || "#764ba2"} 100%)`,
               color: "white",
               "@media (max-width: 600px)": {
                 width: "80vw",
@@ -275,6 +277,8 @@ const Sidebar = ({ role }) => {
       style={{
         width: isCollapsed ? "60px" : "280px",
         transition: "width 0.3s ease-in-out",
+        "--sidebar-primary": branding.primaryColor || "#667eea",
+        "--sidebar-secondary": branding.secondaryColor || "#764ba2",
       }}
     >
       {sidebarContent}

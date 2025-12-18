@@ -213,6 +213,40 @@ router.post("/assignments", auth, async (req, res) => {
   }
 });
 
+// Update user profile
+router.put("/profile", auth, async (req, res) => {
+  try {
+    const { firstName, lastName, phone, address } = req.body;
+    const userId = req.user.id;
+
+    const users = await readUsers();
+    const userIndex = users.findIndex((user) => user.id === userId);
+
+    if (userIndex === -1) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Update user profile fields
+    users[userIndex] = {
+      ...users[userIndex],
+      firstName: firstName || users[userIndex].firstName,
+      lastName: lastName || users[userIndex].lastName,
+      phone: phone || users[userIndex].phone,
+      address: address || users[userIndex].address,
+    };
+
+    await writeUsers(users);
+
+    // Return updated user data
+    const updatedUser = users[userIndex];
+    const { password, ...safeUser } = updatedUser;
+    res.json({ message: "Profile updated successfully", user: safeUser });
+  } catch (error) {
+    console.error("Error updating profile:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 // Promote student to higher class (Principal only)
 router.post("/promotions", auth, async (req, res) => {
   try {
