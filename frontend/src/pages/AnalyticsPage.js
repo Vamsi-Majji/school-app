@@ -85,7 +85,7 @@ const AnalyticsPage = ({ role }) => {
 
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={3}>
-          <Card elevation={3}>
+          <Card elevation={3} sx={{ height: "150px" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <PeopleIcon color="primary" sx={{ mr: 1 }} />
@@ -99,7 +99,7 @@ const AnalyticsPage = ({ role }) => {
         </Grid>
 
         <Grid item xs={12} md={6} lg={3}>
-          <Card elevation={3}>
+          <Card elevation={3} sx={{ height: "150px" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <SchoolIcon color="primary" sx={{ mr: 1 }} />
@@ -113,7 +113,7 @@ const AnalyticsPage = ({ role }) => {
         </Grid>
 
         <Grid item xs={12} md={6} lg={3}>
-          <Card elevation={3}>
+          <Card elevation={3} sx={{ height: "150px" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <AssessmentIcon color="primary" sx={{ mr: 1 }} />
@@ -127,7 +127,7 @@ const AnalyticsPage = ({ role }) => {
         </Grid>
 
         <Grid item xs={12} md={6} lg={3}>
-          <Card elevation={3}>
+          <Card elevation={3} sx={{ height: "150px" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <TrendingUpIcon color="primary" sx={{ mr: 1 }} />

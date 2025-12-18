@@ -442,5 +442,44 @@
     "documents": [
       "7e04ca91b907da4d8accf8cf74110dfc"
     ]
+  },
+  {
+    "id": 36,
+    "username": "kumari23@gmail.com",
+    "email": "kumari23@gmail.com",
+    "password": "$2b$10$1patqSpoWi.I39J2/czGXuxNVHpyUIz1qRsPmKERfAmGtaTnK.GzK",
+    "role": "maid",
+    "schoolName": "Sample School",
+    "firstName": "kumari",
+    "lastName": "satakam",
+    "approved": true,
+    "status": "approved",
+    "createdAt": "2025-12-18T09:44:04.384Z",
+    "experienceDocuments": [
+      "dfb7ac6af70ab49b9794ea1a6cc2bd79"
+    ],
+    "educationDocuments": [
+      "da210e7f1a79d82b7f377ef0bdbd6bd6"
+    ],
+    "otherDocuments": [
+      "6d45adb87f1295b60e0b91b5017c8b1e"
+    ]
+  },
+  {
+    "id": 37,
+    "username": "ayyappa@gmail.com",
+    "email": "ayyappa@gmail.com",
+    "password": "$2b$10$OY1Q8HDOXMH7bl7Sgakuk.jbu3hRdnXCwUmIIj2SBzqYAXtr/O3nC",
+    "role": "principal",
+    "schoolName": "Vignan Schooling",
+    "firstName": "Ayyappa",
+    "lastName": "Swamy",
+    "approved": false,
+    "status": "pending",
+    "createdAt": "2025-12-18T09:50:50.326Z",
+    "schoolDescription": "hi hello",
+    "documents": [
+      "9c59df1f4bea245a17de610b1cf1eead"
+    ]
   }
 ]

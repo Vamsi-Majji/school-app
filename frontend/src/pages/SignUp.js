@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../redux/actions/authActions";
@@ -17,6 +17,8 @@ import {
   IconButton,
   InputAdornment,
   CircularProgress,
+  Chip,
+  Grow,
 } from "@mui/material";
 import {
   School as SchoolIcon,
@@ -25,6 +27,9 @@ import {
   Lock as LockIcon,
   Visibility,
   VisibilityOff,
+  CheckCircle,
+  Error,
+  CloudUpload,
 } from "@mui/icons-material";
 import "./SignUp.css";
 

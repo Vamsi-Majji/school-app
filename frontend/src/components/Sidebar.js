@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/authActions";
+import {
+  useTheme,
+  useMediaQuery,
+  Drawer,
+  Backdrop,
+  IconButton,
+  Avatar,
+} from "@mui/material";
+import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
+import { useBranding } from "../contexts/BrandingContext";
 import "./Sidebar.css";
 
 const menuItems = {
@@ -141,23 +151,14 @@ const menuItems = {
 const Sidebar = ({ role }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const user = useSelector((state) => state.auth.user);
   const currentRole = role || user?.role;
   const items = menuItems[currentRole?.toLowerCase()] || [];
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (!isMobile) {
-        setIsOpen(false); // Reset mobile open state on desktop
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isMobile]);
+  const { branding } = useBranding();
 
   const toggleSidebar = () => {
     if (isMobile) {
@@ -172,53 +173,112 @@ const Sidebar = ({ role }) => {
       dispatch(logout());
       navigate("/login");
     }
+    if (isMobile) {
+      setIsOpen(false);
+    }
   };
 
-  return (
-    <>
-      {isMobile && (
-        <button onClick={toggleSidebar} className="hamburger-menu">
-          ☰
-        </button>
-      )}
-      <div
-        className={`sidebar ${isCollapsed ? "collapsed" : ""} ${
-          isMobile && isOpen ? "open" : ""
-        }`}
-      >
-        <div className="sidebar-header">
-          <div className="logo">
+  const sidebarContent = (
+    <div className={`sidebar-content ${isCollapsed ? "collapsed" : ""}`}>
+      <div className="sidebar-header">
+        <div className="logo">
+          {branding.showLogo && branding.logo ? (
+            <Avatar src={branding.logo} sx={{ width: 32, height: 32, mr: 1 }}>
+              {branding.schoolName.charAt(0)}
+            </Avatar>
+          ) : (
             <span className="logo-icon">🎓</span>
-            {!isCollapsed && <span className="logo-text">EduManage</span>}
-          </div>
+          )}
+          {!isCollapsed && branding.showSchoolName && (
+            <span className="logo-text">
+              {branding.schoolName || "EduManage"}
+            </span>
+          )}
         </div>
-        <ul className="sidebar-menu">
-          {items.map((item) => (
-            <li key={item.name}>
-              {item.path ? (
-                <Link
-                  to={`/${currentRole}/${item.path}`}
-                  title={item.name}
-                  onClick={() => isMobile && setIsOpen(false)}
-                >
-                  <span className="icon">{item.icon}</span>
-                  <span className="label">{item.name}</span>
-                </Link>
-              ) : (
-                <button
-                  onClick={() => handleItemClick(item)}
-                  className="sidebar-menu-button"
-                  title={item.name}
-                >
-                  <span className="icon">{item.icon}</span>
-                  <span className="label">{item.name}</span>
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
       </div>
-    </>
+      <ul className="sidebar-menu">
+        {items.map((item) => (
+          <li key={item.name}>
+            {item.path ? (
+              <Link
+                to={`/${currentRole}/${item.path}`}
+                title={item.name}
+                onClick={() => handleItemClick(item)}
+                className="sidebar-link"
+              >
+                <span className="icon">{item.icon}</span>
+                <span className="label">{item.name}</span>
+              </Link>
+            ) : (
+              <button
+                onClick={() => handleItemClick(item)}
+                className="sidebar-menu-button"
+                title={item.name}
+              >
+                <span className="icon">{item.icon}</span>
+                <span className="label">{item.name}</span>
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  if (isMobile) {
+    return (
+      <>
+        <IconButton
+          onClick={toggleSidebar}
+          sx={{
+            position: "fixed",
+            top: 16,
+            left: 16,
+            zIndex: 1201,
+            backgroundColor: "background.paper",
+            boxShadow: 2,
+            "&:hover": { backgroundColor: "action.hover" },
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Drawer
+          anchor="left"
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          sx={{
+            "& .MuiDrawer-paper": {
+              width: "280px",
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              color: "white",
+              "@media (max-width: 600px)": {
+                width: "80vw",
+                maxWidth: "300px",
+              },
+            },
+          }}
+        >
+          {sidebarContent}
+        </Drawer>
+        <Backdrop
+          sx={{ color: "#fff", zIndex: 1199 }}
+          open={isOpen}
+          onClick={() => setIsOpen(false)}
+        />
+      </>
+    );
+  }
+
+  return (
+    <div
+      className={`sidebar ${isCollapsed ? "collapsed" : ""}`}
+      style={{
+        width: isCollapsed ? "60px" : "280px",
+        transition: "width 0.3s ease-in-out",
+      }}
+    >
+      {sidebarContent}
+    </div>
   );
 };
 

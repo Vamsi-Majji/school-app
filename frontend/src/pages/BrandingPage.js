@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Container,
   Typography,
@@ -13,35 +13,40 @@ import {
   Divider,
   Avatar,
   IconButton,
-} from '@mui/material';
+  Alert,
+  Snackbar,
+} from "@mui/material";
 import {
   PhotoCamera as PhotoCameraIcon,
   Palette as PaletteIcon,
   Save as SaveIcon,
-} from '@mui/icons-material';
+  RestoreSharp as ResetIcon,
+} from "@mui/icons-material";
+import { useBranding } from "../contexts/BrandingContext";
 
 const BrandingPage = ({ role }) => {
-  const [brandingSettings, setBrandingSettings] = useState({
-    schoolName: 'Springfield High School',
-    logo: null,
-    primaryColor: '#1976d2',
-    secondaryColor: '#dc004e',
-    fontFamily: 'Roboto',
-    showLogo: true,
-    showSchoolName: true,
-    customCSS: '',
+  const { branding, updateBranding, resetBranding } = useBranding();
+  const [localSettings, setLocalSettings] = useState(branding);
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "success",
   });
 
   const handleInputChange = (field, value) => {
-    setBrandingSettings(prev => ({
+    setLocalSettings((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
   const handleSave = () => {
-    console.log('Saving branding settings:', brandingSettings);
-    // In real app, make API call to save settings
+    updateBranding(localSettings);
+    setSnackbar({
+      open: true,
+      message: "Branding settings saved successfully!",
+      severity: "success",
+    });
   };
 
   const handleLogoUpload = (event) => {
@@ -49,13 +54,27 @@ const BrandingPage = ({ role }) => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        setBrandingSettings(prev => ({
+        setLocalSettings((prev) => ({
           ...prev,
-          logo: e.target.result
+          logo: e.target.result,
         }));
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleReset = () => {
+    resetBranding();
+    setLocalSettings(branding);
+    setSnackbar({
+      open: true,
+      message: "Branding settings reset to default!",
+      severity: "info",
+    });
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, open: false }));
   };
 
   return (
@@ -68,7 +87,11 @@ const BrandingPage = ({ role }) => {
         <Grid item xs={12}>
           <Card>
             <CardContent>
-              <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{ display: "flex", alignItems: "center" }}
+              >
                 <PaletteIcon sx={{ mr: 1 }} />
                 School Information
               </Typography>
@@ -76,8 +99,10 @@ const BrandingPage = ({ role }) => {
               <TextField
                 fullWidth
                 label="School Name"
-                value={brandingSettings.schoolName}
-                onChange={(e) => handleInputChange('schoolName', e.target.value)}
+                value={localSettings.schoolName}
+                onChange={(e) =>
+                  handleInputChange("schoolName", e.target.value)
+                }
                 sx={{ mb: 2 }}
               />
 
@@ -85,16 +110,16 @@ const BrandingPage = ({ role }) => {
                 <Typography variant="subtitle1" gutterBottom>
                   School Logo
                 </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                   <Avatar
-                    src={brandingSettings.logo}
+                    src={localSettings.logo}
                     sx={{ width: 80, height: 80 }}
                   >
-                    {brandingSettings.schoolName.charAt(0)}
+                    {localSettings.schoolName.charAt(0)}
                   </Avatar>
                   <input
                     accept="image/*"
-                    style={{ display: 'none' }}
+                    style={{ display: "none" }}
                     id="logo-upload"
                     type="file"
                     onChange={handleLogoUpload}
@@ -110,8 +135,10 @@ const BrandingPage = ({ role }) => {
               <FormControlLabel
                 control={
                   <Switch
-                    checked={brandingSettings.showLogo}
-                    onChange={(e) => handleInputChange('showLogo', e.target.checked)}
+                    checked={localSettings.showLogo}
+                    onChange={(e) =>
+                      handleInputChange("showLogo", e.target.checked)
+                    }
                   />
                 }
                 label="Show Logo"
@@ -121,8 +148,10 @@ const BrandingPage = ({ role }) => {
               <FormControlLabel
                 control={
                   <Switch
-                    checked={brandingSettings.showSchoolName}
-                    onChange={(e) => handleInputChange('showSchoolName', e.target.checked)}
+                    checked={localSettings.showSchoolName}
+                    onChange={(e) =>
+                      handleInputChange("showSchoolName", e.target.checked)
+                    }
                   />
                 }
                 label="Show School Name"
@@ -144,8 +173,10 @@ const BrandingPage = ({ role }) => {
                     fullWidth
                     label="Primary Color"
                     type="color"
-                    value={brandingSettings.primaryColor}
-                    onChange={(e) => handleInputChange('primaryColor', e.target.value)}
+                    value={localSettings.primaryColor}
+                    onChange={(e) =>
+                      handleInputChange("primaryColor", e.target.value)
+                    }
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -153,8 +184,10 @@ const BrandingPage = ({ role }) => {
                     fullWidth
                     label="Secondary Color"
                     type="color"
-                    value={brandingSettings.secondaryColor}
-                    onChange={(e) => handleInputChange('secondaryColor', e.target.value)}
+                    value={localSettings.secondaryColor}
+                    onChange={(e) =>
+                      handleInputChange("secondaryColor", e.target.value)
+                    }
                   />
                 </Grid>
               </Grid>
@@ -172,8 +205,10 @@ const BrandingPage = ({ role }) => {
               <TextField
                 fullWidth
                 label="Font Family"
-                value={brandingSettings.fontFamily}
-                onChange={(e) => handleInputChange('fontFamily', e.target.value)}
+                value={localSettings.fontFamily}
+                onChange={(e) =>
+                  handleInputChange("fontFamily", e.target.value)
+                }
                 placeholder="e.g., Roboto, Arial, sans-serif"
               />
             </CardContent>
@@ -192,8 +227,8 @@ const BrandingPage = ({ role }) => {
                 multiline
                 rows={6}
                 label="Custom CSS"
-                value={brandingSettings.customCSS}
-                onChange={(e) => handleInputChange('customCSS', e.target.value)}
+                value={localSettings.customCSS}
+                onChange={(e) => handleInputChange("customCSS", e.target.value)}
                 placeholder="Enter custom CSS rules..."
                 variant="outlined"
               />
@@ -202,7 +237,15 @@ const BrandingPage = ({ role }) => {
         </Grid>
 
         <Grid item xs={12}>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Button
+              variant="outlined"
+              startIcon={<ResetIcon />}
+              onClick={handleReset}
+              size="large"
+            >
+              Reset to Default
+            </Button>
             <Button
               variant="contained"
               startIcon={<SaveIcon />}
@@ -214,6 +257,21 @@ const BrandingPage = ({ role }) => {
           </Box>
         </Grid>
       </Grid>
+
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbar.severity}
+          sx={{ width: "100%" }}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 };

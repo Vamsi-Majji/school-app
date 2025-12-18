@@ -57,27 +57,61 @@ const AdminDashboard = () => {
         Admin Dashboard
       </Typography>
 
-      <Grid container spacing={3}>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <Card>
-            <CardContent>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                <TrendingUpIcon color="primary" sx={{ mr: 1 }} />
-                <Typography variant="h6">User Registration Trends</Typography>
+      <Grid container spacing={{ xs: 2, sm: 3 }}>
+        <Grid size={{ xs: 12, sm: 6, lg: 6 }}>
+          <Card sx={{ height: "400px" }}>
+            <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mb: 2,
+                  flexWrap: "wrap",
+                }}
+              >
+                <TrendingUpIcon
+                  color="primary"
+                  sx={{ mr: 1, fontSize: { xs: "1.5rem", sm: "2rem" } }}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{ fontSize: { xs: "1.1rem", sm: "1.25rem" } }}
+                >
+                  User Registration Trends
+                </Typography>
               </Box>
-              <Chart type="line" data={userRegistrationData} />
+              <Box sx={{ height: "300px" }}>
+                <Chart type="line" data={userRegistrationData} />
+              </Box>
             </CardContent>
           </Card>
         </Grid>
 
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <Card>
-            <CardContent>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                <AssessmentIcon color="primary" sx={{ mr: 1 }} />
-                <Typography variant="h6">System Performance</Typography>
+        <Grid size={{ xs: 12, sm: 6, lg: 6 }}>
+          <Card sx={{ height: { xs: "auto", sm: "400px" } }}>
+            <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mb: 2,
+                  flexWrap: "wrap",
+                }}
+              >
+                <AssessmentIcon
+                  color="primary"
+                  sx={{ mr: 1, fontSize: { xs: "1.5rem", sm: "2rem" } }}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{ fontSize: { xs: "1.1rem", sm: "1.25rem" } }}
+                >
+                  System Performance
+                </Typography>
               </Box>
-              <Chart type="bar" data={systemPerformanceData} />
+              <Box sx={{ height: { xs: "250px", sm: "300px" } }}>
+                <Chart type="bar" data={systemPerformanceData} />
+              </Box>
             </CardContent>
           </Card>
         </Grid>

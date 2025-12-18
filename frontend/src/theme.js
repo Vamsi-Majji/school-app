@@ -1,50 +1,66 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Blue
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: "#667eea", // Modern blue
+      light: "#9fa8da",
+      dark: "#303f9f",
     },
     secondary: {
-      main: '#dc004e', // Pink
-      light: '#ff5983',
-      dark: '#9a0036',
+      main: "#764ba2", // Purple
+      light: "#ba68c8",
+      dark: "#4a148c",
     },
     background: {
-      default: '#f5f5f5',
-      paper: '#ffffff',
+      default: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      paper: "rgba(255, 255, 255, 0.95)",
     },
     text: {
-      primary: '#212121',
-      secondary: '#757575',
+      primary: "#212121",
+      secondary: "#757575",
+    },
+    success: {
+      main: "#4caf50",
+    },
+    error: {
+      main: "#f44336",
     },
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: '2.5rem',
+      fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
       fontWeight: 500,
     },
     h2: {
-      fontSize: '2rem',
+      fontSize: "clamp(1.25rem, 4vw, 2rem)",
       fontWeight: 500,
     },
     h3: {
-      fontSize: '1.75rem',
+      fontSize: "clamp(1.125rem, 3vw, 1.75rem)",
       fontWeight: 500,
     },
     h4: {
-      fontSize: '1.5rem',
+      fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
       fontWeight: 500,
     },
     h5: {
-      fontSize: '1.25rem',
+      fontSize: "clamp(0.875rem, 2vw, 1.25rem)",
       fontWeight: 500,
     },
     h6: {
-      fontSize: '1rem',
+      fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
+      fontWeight: 500,
+    },
+    body1: {
+      fontSize: "clamp(0.875rem, 2vw, 1rem)",
+    },
+    body2: {
+      fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
+    },
+    button: {
+      fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
       fontWeight: 500,
     },
   },
@@ -53,10 +69,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 12,
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          transition: 'box-shadow 0.3s ease-in-out',
-          '&:hover': {
-            boxShadow: '0 8px 16px rgba(0, 0, 0, 0.15)',
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          transition: "box-shadow 0.3s ease-in-out",
+          "&:hover": {
+            boxShadow: "0 8px 16px rgba(0, 0, 0, 0.15)",
           },
         },
       },
@@ -65,16 +81,58 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
-          textTransform: 'none',
+          textTransform: "none",
           fontWeight: 500,
+          padding: "8px 16px",
+          minHeight: 40,
+          "@media (max-width: 600px)": {
+            padding: "10px 20px",
+            minHeight: 44, // Better touch target for mobile
+          },
         },
       },
     },
     MuiTextField: {
       styleOverrides: {
         root: {
-          '& .MuiOutlinedInput-root': {
+          "& .MuiOutlinedInput-root": {
             borderRadius: 8,
+            "& fieldset": {
+              borderColor: "#e0e0e0",
+            },
+            "&:hover fieldset": {
+              borderColor: "#1976d2",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#1976d2",
+            },
+          },
+        },
+      },
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: 16,
+          paddingRight: 16,
+          "@media (min-width: 600px)": {
+            paddingLeft: 24,
+            paddingRight: 24,
+          },
+          "@media (min-width: 960px)": {
+            paddingLeft: 32,
+            paddingRight: 32,
+          },
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          width: 280,
+          "@media (max-width: 600px)": {
+            width: "80vw",
+            maxWidth: 300,
           },
         },
       },
