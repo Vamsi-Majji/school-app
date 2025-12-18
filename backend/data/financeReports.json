@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "schoolName": "Sample School",
+    "type": "fee_collection",
+    "period": "June 2024",
+    "data": {
+      "totalCollected": 500000,
+      "totalDue": 100000,
+      "byPaymentMode": { "cash": 200000, "bank_transfer": 250000, "upi": 50000 },
+      "byFeeHead": { "tuition": 300000, "exam": 50000, "bus": 100000, "hostel": 50000 }
+    },
+    "generatedAt": "2024-07-01"
+  },
+  {
+    "id": 2,
+    "schoolName": "Sample School",
+    "type": "payroll_summary",
+    "period": "June 2024",
+    "data": {
+      "totalSalaryPaid": 200000,
+      "byDepartment": { "teaching": 150000, "non_teaching": 50000 },
+      "averageSalary": 25000
+    },
+    "generatedAt": "2024-07-01"
+  }
+]

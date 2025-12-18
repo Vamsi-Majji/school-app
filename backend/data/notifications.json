@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "message": "New assignment posted",
+    "type": "assignment",
+    "userId": 1
+  },
+  {
+    "id": 2,
+    "message": "Grade updated",
+    "type": "grade",
+    "userId": 1
+  },
+  {
+    "id": 3,
+    "message": "New assignment posted",
+    "type": "assignment",
+    "userId": 2
+  },
+  {
+    "id": 4,
+    "message": "Attendance marked",
+    "type": "attendance",
+    "userId": 8
+  },
+  {
+    "id": 5,
+    "message": "Meeting scheduled",
+    "type": "meeting",
+    "userId": 3
+  },
+  {
+    "id": 6,
+    "message": "Grade posted",
+    "type": "grade",
+    "userId": 11
+  },
+  {
+    "id": 7,
+    "message": "New class added",
+    "type": "class",
+    "userId": 1
+  },
+  {
+    "id": 8,
+    "message": "Subject updated",
+    "type": "subject",
+    "userId": 5
+  },
+  {
+    "id": 9,
+    "message": "Reminder: Assignment due",
+    "type": "reminder",
+    "userId": 2
+  },
+  {
+    "id": 10,
+    "message": "New user registered",
+    "type": "user",
+    "userId": 1
+  }
+]

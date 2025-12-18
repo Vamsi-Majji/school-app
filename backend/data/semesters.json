@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Semester 1",
+    "year": "2023-2024",
+    "startDate": "2023-08-01",
+    "endDate": "2023-12-15",
+    "schoolName": "Sample College"
+  },
+  {
+    "id": 2,
+    "name": "Semester 2",
+    "year": "2023-2024",
+    "startDate": "2024-01-15",
+    "endDate": "2024-05-30",
+    "schoolName": "Sample College"
+  },
+  {
+    "id": 3,
+    "name": "Semester 3",
+    "year": "2024-2025",
+    "startDate": "2024-08-01",
+    "endDate": "2024-12-15",
+    "schoolName": "Sample College"
+  },
+  {
+    "id": 4,
+    "name": "Semester 4",
+    "year": "2024-2025",
+    "startDate": "2025-01-15",
+    "endDate": "2025-05-30",
+    "schoolName": "Sample College"
+  }
+]

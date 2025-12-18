@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "graduationYear": 2020,
+    "degree": "Bachelor of Computer Science",
+    "schoolId": 2,
+    "currentPosition": "Software Engineer",
+    "company": "Tech Innovations Inc.",
+    "location": "San Francisco, CA",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "email": "john.doe@email.com",
+    "phone": "+1-555-0123",
+    "achievements": [
+      "Dean's List 2018-2020",
+      "Best Project Award 2019",
+      "Hackathon Winner 2019"
+    ],
+    "mentorshipAvailable": true,
+    "mentoringCount": 5,
+    "donationHistory": [
+      {
+        "year": 2021,
+        "amount": 500,
+        "purpose": "Scholarship Fund"
+      },
+      {
+        "year": 2022,
+        "amount": 1000,
+        "purpose": "Library Enhancement"
+      }
+    ],
+    "careerPath": [
+      {
+        "position": "Junior Developer",
+        "company": "StartupXYZ",
+        "year": 2020,
+        "duration": "1 year"
+      },
+      {
+        "position": "Software Engineer",
+        "company": "Tech Innovations Inc.",
+        "year": 2021,
+        "duration": "Current"
+      }
+    ],
+    "skills": ["JavaScript", "Python", "React", "Node.js", "Machine Learning"],
+    "networkingEvents": ["Alumni Meetup 2023", "Tech Conference 2024"]
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "graduationYear": 2019,
+    "degree": "Master of Business Administration",
+    "schoolId": 2,
+    "currentPosition": "Marketing Director",
+    "company": "Global Marketing Solutions",
+    "location": "New York, NY",
+    "linkedin": "https://linkedin.com/in/sarahsmith",
+    "email": "sarah.smith@email.com",
+    "phone": "+1-555-0456",
+    "achievements": [
+      "Outstanding Leadership Award 2018",
+      "MBA Valedictorian 2019"
+    ],
+    "mentorshipAvailable": true,
+    "mentoringCount": 8,
+    "donationHistory": [
+      {
+        "year": 2020,
+        "amount": 2000,
+        "purpose": "Entrepreneurship Center"
+      }
+    ],
+    "careerPath": [
+      {
+        "position": "Marketing Coordinator",
+        "company": "Brand Solutions Ltd",
+        "year": 2019,
+        "duration": "2 years"
+      },
+      {
+        "position": "Marketing Manager",
+        "company": "Global Marketing Solutions",
+        "year": 2021,
+        "duration": "2 years"
+      },
+      {
+        "position": "Marketing Director",
+        "company": "Global Marketing Solutions",
+        "year": 2023,
+        "duration": "Current"
+      }
+    ],
+    "skills": ["Digital Marketing", "Brand Strategy", "Leadership", "Analytics"],
+    "networkingEvents": ["Alumni Business Forum 2023", "Leadership Summit 2024"]
+  }
+]

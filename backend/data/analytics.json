@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "type": "student_performance_prediction",
+    "schoolId": 1,
+    "data": {
+      "studentId": 1,
+      "predictedGPA": 3.8,
+      "confidence": 0.85,
+      "riskFactors": ["low attendance", "inconsistent grades"],
+      "recommendations": ["extra tutoring", "attendance improvement"],
+      "generatedAt": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "id": 2,
+    "type": "trend_analysis",
+    "schoolId": 1,
+    "data": {
+      "subject": "Mathematics",
+      "trend": "improving",
+      "averageScore": 78.5,
+      "changePercentage": 12.3,
+      "timeframe": "last_semester",
+      "insights": ["consistent improvement", "effective teaching methods"]
+    }
+  },
+  {
+    "id": 3,
+    "type": "dropout_prediction",
+    "schoolId": 1,
+    "data": {
+      "studentId": 2,
+      "riskLevel": "high",
+      "probability": 0.72,
+      "indicators": ["frequent absences", "failing grades", "low engagement"],
+      "intervention": "immediate counseling required"
+    }
+  }
+]

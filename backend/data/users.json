@@ -1,0 +1,446 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@sample.com",
+    "password": "admin1pass",
+    "role": "admin",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 2,
+    "username": "student",
+    "email": "student@sample.com",
+    "password": "student2pass",
+    "role": "student",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 3,
+    "username": "teacher",
+    "email": "teacher@sample.com",
+    "password": "teacher3pass",
+    "role": "teacher",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 4,
+    "username": "parent",
+    "email": "parent@sample.com",
+    "password": "$2a$10$e7d26b31499f21cac8cc586237ce7735",
+    "role": "parent",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 5,
+    "username": "principal",
+    "email": "principal@sample.com",
+    "password": "Principal#123",
+    "role": "principal",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 6,
+    "username": "attender",
+    "email": "attender@sample.com",
+    "password": "$2a$10$cb45e99a22ecebf431eb5eeec78c4d09",
+    "role": "attender",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 7,
+    "username": "vamsimajji143@gmail.com",
+    "email": "vamsimajji143@gmail.com",
+    "password": "$2a$10$68a7a2d99f7daa7d27bf9bfa68b2b4a2",
+    "role": "admin",
+    "schoolName": "ram mandir",
+    "firstName": "Vamsi",
+    "lastName": "Majji",
+    "approved": true
+  },
+  {
+    "id": 8,
+    "username": "student2",
+    "email": "student2@sample.com",
+    "password": "$2a$10$5651a1d5037869198ccae84c7318becd",
+    "role": "student",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 9,
+    "username": "teacher2",
+    "email": "teacher2@sample.com",
+    "password": "$2a$10$4295959bee5ab616d9ea965b6f0aac5f",
+    "role": "teacher",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 10,
+    "username": "parent2",
+    "email": "parent2@sample.com",
+    "password": "$2a$10$17e051afaeb83fa2028dec538bae4b76",
+    "role": "parent",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 11,
+    "username": "student3",
+    "email": "student3@sample.com",
+    "password": "$2a$10$84f6c3f34618e432c4ae88569ce041b1",
+    "role": "student",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 12,
+    "username": "teacher3",
+    "email": "teacher3@sample.com",
+    "password": "$2a$10$ba83ae9020533ce52a377aae63d0167f",
+    "role": "teacher",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 13,
+    "username": "attender2",
+    "email": "attender2@sample.com",
+    "password": "$2a$10$194371610c5ce9c5528237a3b375c47d",
+    "role": "attender",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 14,
+    "username": "principal2",
+    "email": "principal2@sample.com",
+    "password": "Principal#12",
+    "role": "principal",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 15,
+    "username": "admin2",
+    "email": "admin2@sample.com",
+    "password": "$2a$10$37752d70f903173a1682d3f23eb8c8ac",
+    "role": "admin",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 16,
+    "username": "accountant1",
+    "email": "accountant1@sample.com",
+    "password": "$2a$10$63c672ca770cd746aa56544831ab1b2a",
+    "role": "accountant",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 17,
+    "username": "accountant2",
+    "email": "accountant2@sample.com",
+    "password": "Account#123",
+    "role": "accountant",
+    "schoolName": "Sample School",
+    "approved": true
+  },
+  {
+    "id": 18,
+    "username": "professor",
+    "email": "professor@sample.com",
+    "password": "$2a$10$0a19d4f76f5b8b2320f796ea651e581b",
+    "role": "professor",
+    "schoolName": "Sample College",
+    "approved": true
+  },
+  {
+    "id": 19,
+    "username": "dean",
+    "email": "dean@sample.com",
+    "password": "$2a$10$d66e0aa457660f646f65d33ae7d15b95",
+    "role": "dean",
+    "schoolName": "Sample College",
+    "approved": true
+  },
+  {
+    "id": 20,
+    "username": "hod",
+    "email": "hod@sample.com",
+    "password": "$2a$10$b32b76e547864c97311347db20d2c754",
+    "role": "hod",
+    "schoolName": "Sample College",
+    "approved": true
+  },
+  {
+    "id": 21,
+    "username": "librarian",
+    "email": "librarian@sample.com",
+    "password": "$2a$10$d1a3fc552afa4595d5cd47c0c606a8fb",
+    "role": "librarian",
+    "schoolName": "Sample College",
+    "approved": true
+  },
+  {
+    "id": 22,
+    "username": "student_new@example.com",
+    "email": "student_new@example.com",
+    "password": "$2a$10$2dd1f2ce4a3be623560c9d6b7372116a",
+    "role": "student",
+    "schoolName": "Sample School",
+    "firstName": "John",
+    "lastName": "Doe",
+    "parentEmail": "parent_new@example.com",
+    "educationDocuments": "https://example.com/student_education_docs.pdf",
+    "otherDocuments": "https://example.com/student_id_docs.pdf",
+    "status": "pending",
+    "createdAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": 23,
+    "username": "parent_new@example.com",
+    "email": "parent_new@example.com",
+    "password": "Par#123",
+    "role": "parent",
+    "schoolName": "Sample School",
+    "firstName": "John's",
+    "lastName": "Parent",
+    "phone": "+1234567890",
+    "aadhar": "1234-5678-9012",
+    "documents": "https://example.com/parent_docs.pdf",
+    "studentEmail": "student_new@example.com",
+    "status": "approved",
+    "createdAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": 24,
+    "username": "teacher_new@example.com",
+    "email": "teacher_new@example.com",
+    "password": "Teach#123",
+    "role": "teacher",
+    "schoolName": "Sample School",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "experienceDocuments": "https://example.com/teacher_experience.pdf",
+    "educationDocuments": "https://example.com/teacher_education.pdf",
+    "otherDocuments": "https://example.com/teacher_certificates.pdf",
+    "status": "pending",
+    "createdAt": "2024-01-15T11:00:00.000Z"
+  },
+  {
+    "id": 25,
+    "username": "attender_new@example.com",
+    "email": "attender_new@example.com",
+    "password": "Atte#123",
+    "role": "attender",
+    "schoolName": "Sample School",
+    "firstName": "Mike",
+    "lastName": "Johnson",
+    "experienceDocuments": "https://example.com/attender_experience.pdf",
+    "educationDocuments": "https://example.com/attender_education.pdf",
+    "otherDocuments": "https://example.com/attender_background.pdf",
+    "status": "pending",
+    "createdAt": "2024-01-15T12:00:00.000Z"
+  },
+  {
+    "id": 26,
+    "username": "kesav123@gmail.com",
+    "email": "kesav123@gmail.com",
+    "password": "$2a$10$2685b3ec88fb04db1546657b1026a42a",
+    "role": "student",
+    "schoolName": "Chikiri school",
+    "firstName": "kesava",
+    "lastName": "raju",
+    "parentEmail": "dharam raju",
+    "educationDocuments": "ff.pdf",
+    "otherDocuments": "kg.pdf",
+    "status": "pending",
+    "createdAt": "2025-12-01T06:42:38.586Z"
+  },
+  {
+    "id": 27,
+    "username": "dharam raju",
+    "email": "dharam raju",
+    "password": "$2a$10$5c19aa3efe8f37f44f21d72223c6a3d7",
+    "role": "parent",
+    "schoolName": "Chikiri school",
+    "firstName": "kesava's Parent",
+    "lastName": "raju",
+    "phone": "7858585885",
+    "aadhar": "875978585585",
+    "documents": "url.pdf",
+    "studentEmail": "kesav123@gmail.com",
+    "status": "approved",
+    "createdAt": "2025-12-01T06:42:38.613Z"
+  },
+  {
+    "id": 28,
+    "username": "rahul@gmail.com",
+    "email": "rahul@gmail.com",
+    "password": "$2b$10$V1I3iPNNmWR/acDRT0NvXu4rbFAhXs9D8/7Js4E3AuYk2FLWDGMta",
+    "role": "teacher",
+    "schoolName": "Sample School",
+    "firstName": "rahul",
+    "lastName": "sanghvi",
+    "approved": false,
+    "status": "pending",
+    "createdAt": "2025-12-17T07:02:00.879Z",
+    "experienceDocuments": [
+      "4e6aa8e26fda9bbb1e3d0d6d39a037a4"
+    ],
+    "educationDocuments": [
+      "0b354c58f3e437219a2c5e25d3b6d033"
+    ],
+    "otherDocuments": [
+      "4958b5d26a86d6472fa68899e0835efb"
+    ]
+  },
+  {
+    "id": 29,
+    "username": "charan@gmail.com",
+    "email": "charan@gmail.com",
+    "password": "$2b$10$/Rd6hHRQynFSrpgqQGYWBePy7ud//qaINc90Pij29ilk5Hn80u2QO",
+    "role": "student",
+    "schoolName": "Sample School",
+    "firstName": "Charan",
+    "lastName": "k",
+    "approved": false,
+    "status": "pending",
+    "createdAt": "2025-12-17T07:14:42.714Z",
+    "parentEmail": "chiranjeevi23@gmail.com",
+    "educationDocuments": [
+      "642a792fe474d240e086f8e9ae6b256d"
+    ],
+    "otherDocuments": [
+      "d35224aa09f03faf35b6f740504ed4dd"
+    ]
+  },
+  {
+    "id": 30,
+    "username": "chiranjeevi23@gmail.com",
+    "email": "chiranjeevi23@gmail.com",
+    "password": "$2b$10$DLgN3Rzj1R/FmCCqjf54a.pS9kouPC1RkitAIP9GhEuFTgXaZ24dO",
+    "role": "parent",
+    "schoolName": "Sample School",
+    "firstName": "Charan's Parent",
+    "lastName": "k",
+    "phone": "87594858585",
+    "aadhar": "875858585475",
+    "studentEmail": "charan@gmail.com",
+    "approved": true,
+    "status": "approved",
+    "createdAt": "2025-12-17T07:14:42.952Z",
+    "documents": [
+      "b0a5bfa2d9874b9e2bbdf3fc963d9b6f"
+    ]
+  },
+  {
+    "id": 31,
+    "username": "varun123@gmail.com",
+    "email": "varun123@gmail.com",
+    "password": "$2b$10$HiWVADHWk6N7fxG9TCYyy.SyGcrQ8Pr7YqfMfqtnX0mTEQk.Wdshq",
+    "role": "teacher",
+    "schoolName": "Sample School",
+    "firstName": "varun",
+    "lastName": "tej",
+    "approved": true,
+    "status": "approved",
+    "createdAt": "2025-12-17T10:13:54.245Z",
+    "experienceDocuments": [
+      "368cdcf2f08ca2f2b009208f71280ebe"
+    ],
+    "educationDocuments": [
+      "310d7eb2a433bbfa89b01065ab1eb02c"
+    ],
+    "otherDocuments": [
+      "54e9952864c25136adef83f9fa8c5285"
+    ]
+  },
+  {
+    "id": 32,
+    "username": "rama23@gmail.com",
+    "email": "rama23@gmail.com",
+    "password": "$2b$10$cC/Z18ybl1rJqU0/i4z6jOgjVE/hv/NjKpDQia1jdQitrgpTem.KS",
+    "role": "student",
+    "schoolName": "ramraju",
+    "firstName": "kesava",
+    "lastName": "kev",
+    "approved": false,
+    "status": "pending",
+    "createdAt": "2025-12-17T12:42:29.002Z",
+    "parentEmail": "kesav@gmail.com",
+    "educationDocuments": [
+      "3362ddbaa39d438e1031c1bd916fdf8b"
+    ],
+    "otherDocuments": [
+      "b9cc81c78885171afd4efd8d1cbfd057"
+    ]
+  },
+  {
+    "id": 33,
+    "username": "kesav@gmail.com",
+    "email": "kesav@gmail.com",
+    "password": "$2b$10$G9hb2qYMOER9gnTJOgpHxu3kZV1LJ5OOWzkvUbpvV99wmyQ2V9J3q",
+    "role": "parent",
+    "schoolName": "ramraju",
+    "firstName": "kesava's Parent",
+    "lastName": "kev",
+    "phone": "8758585858",
+    "aadhar": "Kesav#123",
+    "studentEmail": "rama23@gmail.com",
+    "approved": true,
+    "status": "approved",
+    "createdAt": "2025-12-17T12:42:29.209Z",
+    "documents": [
+      "cae2c46eb8e077a1b6dc68317feb62b6"
+    ]
+  },
+  {
+    "id": 34,
+    "username": "vimal12@gmail.com",
+    "email": "vimal12@gmail.com",
+    "password": "$2b$10$vFusC1k.kVqyWdksdyxUd.eOgMxz24CWYUMe4UwiaSQvDrLiVHum.",
+    "role": "student",
+    "schoolName": "Sample School",
+    "firstName": "vimal",
+    "lastName": "k",
+    "approved": true,
+    "status": "approved",
+    "createdAt": "2025-12-17T12:44:59.914Z",
+    "parentEmail": "kesari23@gmail.com",
+    "educationDocuments": [
+      "637ae26286ec4e85a114c8e1aac8239d"
+    ],
+    "otherDocuments": [
+      "ade85bdc2b3987fa9f34ae5340ce526b"
+    ]
+  },
+  {
+    "id": 35,
+    "username": "kesari23@gmail.com",
+    "email": "kesari23@gmail.com",
+    "password": "$2b$10$ppmWxoKuwIR.8qaTHdMJBuOC//tVuJuVsVy4OPuxU1cvo7DkJ19XO",
+    "role": "parent",
+    "schoolName": "Sample School",
+    "firstName": "vimal's Parent",
+    "lastName": "k",
+    "phone": "8759585885",
+    "aadhar": "875858585478",
+    "studentEmail": "vimal12@gmail.com",
+    "approved": true,
+    "status": "approved",
+    "createdAt": "2025-12-17T12:45:00.224Z",
+    "documents": [
+      "7e04ca91b907da4d8accf8cf74110dfc"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "AI in Education: Future Trends",
+    "authors": ["Dr. Sarah Johnson", "Prof. Michael Chen"],
+    "department": "Computer Science",
+    "schoolId": 2,
+    "publicationType": "journal_article",
+    "journalName": "International Journal of Educational Technology",
+    "publicationDate": "2024-01-15",
+    "doi": "10.1234/ijet.2024.001",
+    "abstract": "This research explores the integration of artificial intelligence in modern educational systems...",
+    "keywords": ["AI", "education", "technology", "future trends"],
+    "citations": 45,
+    "status": "published",
+    "funding": {
+      "grantId": "EDU-2023-001",
+      "amount": 50000,
+      "source": "National Science Foundation"
+    },
+    "collaborators": ["University of Tech", "Global Education Institute"],
+    "impact": "High impact in educational technology field"
+  },
+  {
+    "id": 2,
+    "title": "Sustainable Campus Design for 21st Century",
+    "authors": ["Prof. Emily Rodriguez"],
+    "department": "Environmental Engineering",
+    "schoolId": 2,
+    "publicationType": "conference_paper",
+    "conferenceName": "International Conference on Sustainable Development",
+    "publicationDate": "2024-02-20",
+    "abstract": "Examining sustainable architectural designs for modern educational institutions...",
+    "keywords": ["sustainability", "campus design", "green technology"],
+    "citations": 23,
+    "status": "published",
+    "funding": {
+      "grantId": "ENV-2023-005",
+      "amount": 75000,
+      "source": "Green Technology Initiative"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Blockchain-Based Certificate Verification System",
+    "authors": ["Dr. David Kim", "Dr. Lisa Wang"],
+    "department": "Information Technology",
+    "schoolId": 2,
+    "publicationType": "patent",
+    "patentNumber": "US20240012345",
+    "publicationDate": "2024-03-10",
+    "abstract": "A novel blockchain system for secure academic certificate verification...",
+    "keywords": ["blockchain", "certificates", "security", "verification"],
+    "citations": 67,
+    "status": "patented",
+    "funding": {
+      "grantId": "SEC-2023-002",
+      "amount": 100000,
+      "source": "Cybersecurity Research Fund"
+    }
+  }
+]

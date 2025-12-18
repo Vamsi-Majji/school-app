@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "schoolName": "Sample School",
+    "employeeId": 3,
+    "employeeName": "Jane Smith",
+    "role": "teacher",
+    "salaryStructure": {
+      "basic": 30000,
+      "allowances": { "houseRent": 5000, "conveyance": 2000 },
+      "deductions": { "tax": 3000, "insurance": 500 }
+    },
+    "payFrequency": "monthly",
+    "bankDetails": { "accountNumber": "1234567890", "ifsc": "SBIN0001234" },
+    "payrollRuns": [
+      {
+        "month": "June 2024",
+        "grossSalary": 37000,
+        "netSalary": 33500,
+        "status": "finalized",
+        "payslipGenerated": true
+      }
+    ]
+  }
+]

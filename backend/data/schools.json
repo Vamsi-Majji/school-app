@@ -1,0 +1,47 @@
+{
+    "id": 1,
+    "name": "Sample School",
+    "address": "123 Main St, City, State",
+    "phone": "123-456-7890",
+    "email": "info@sampleschool.com",
+    "principalId": 5,
+    "customFields": {
+      "motto": "Learn Today, Lead Tomorrow",
+      "foundedYear": 1990,
+      "website": "www.sampleschool.com"
+    }
+  }
+]
+=======
+[
+  {
+    "id": 1,
+    "name": "Sample School",
+    "type": "school",
+    "address": "123 Main St, City, State",
+    "phone": "123-456-7890",
+    "email": "info@sampleschool.com",
+    "principalId": 5,
+    "customFields": {
+      "motto": "Learn Today, Lead Tomorrow",
+      "foundedYear": 1990,
+      "website": "www.sampleschool.com"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Sample College",
+    "type": "college",
+    "address": "456 College Ave, City, State",
+    "phone": "987-654-3210",
+    "email": "info@samplecollege.com",
+    "principalId": 19,
+    "customFields": {
+      "motto": "Excellence in Education",
+      "foundedYear": 1985,
+      "website": "www.samplecollege.com",
+      "accreditation": "NAAC A+",
+      "affiliation": "State University"
+    }
+  }
+]

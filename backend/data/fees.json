@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "schoolName": "Sample School",
+    "feeHeads": [
+      { "id": 1, "name": "Tuition Fee", "amount": 5000, "type": "monthly" },
+      { "id": 2, "name": "Exam Fee", "amount": 1000, "type": "annual" },
+      { "id": 3, "name": "Bus Fee", "amount": 2000, "type": "monthly" },
+      { "id": 4, "name": "Hostel Fee", "amount": 3000, "type": "monthly" },
+      { "id": 5, "name": "Lab Fee", "amount": 500, "type": "annual" },
+      { "id": 6, "name": "Miscellaneous", "amount": 1000, "type": "annual" }
+    ],
+    "feePlans": [
+      {
+        "id": 1,
+        "name": "Standard Plan",
+        "class": "10th",
+        "feeHeads": [1, 2, 3],
+        "instalments": [
+          { "month": "June", "dueDate": "2024-06-15", "amount": 7000 },
+          { "month": "July", "dueDate": "2024-07-15", "amount": 7000 },
+          { "month": "August", "dueDate": "2024-08-15", "amount": 7000 }
+        ],
+        "lateFeeRules": { "days": 10, "amount": 100 },
+        "discounts": { "scholarship": 20, "earlyBird": 10 }
+      }
+    ]
+  }
+]

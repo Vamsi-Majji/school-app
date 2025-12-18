@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "multiSchoolMode": false,
+  "maxSchools": 10,
+  "features": {
+    "notifications": true,
+    "realTimeUpdates": true,
+    "auditLog": true
+  },
+  "customSettings": {
+    "theme": "default",
+    "language": "en"
+  }
+}

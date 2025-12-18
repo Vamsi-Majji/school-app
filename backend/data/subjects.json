@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Math",
+    "teacherId": 3
+  },
+  {
+    "id": 2,
+    "name": "Science",
+    "teacherId": 3
+  },
+  {
+    "id": 3,
+    "name": "History",
+    "teacherId": 9
+  },
+  {
+    "id": 4,
+    "name": "English",
+    "teacherId": 12
+  },
+  {
+    "id": 5,
+    "name": "Geography",
+    "teacherId": 3
+  },
+  {
+    "id": 6,
+    "name": "Art",
+    "teacherId": 9
+  },
+  {
+    "id": 7,
+    "name": "PE",
+    "teacherId": 12
+  },
+  {
+    "id": 8,
+    "name": "Music",
+    "teacherId": 3
+  },
+  {
+    "id": 9,
+    "name": "Chemistry",
+    "teacherId": 9
+  },
+  {
+    "id": 10,
+    "name": "Physics",
+    "teacherId": 12
+  },
+  {
+    "id": 11,
+    "name": "Computer Science",
+    "teacherId": 18
+  },
+  {
+    "id": 12,
+    "name": "Biology",
+    "teacherId": 18
+  },
+  {
+    "id": 13,
+    "name": "Chemistry",
+    "teacherId": 18
+  },
+  {
+    "id": 14,
+    "name": "Economics",
+    "teacherId": 18
+  },
+  {
+    "id": 15,
+    "name": "Psychology",
+    "teacherId": 18
+  },
+  {
+    "id": 16,
+    "name": "Data Structures",
+    "teacherId": 18
+  },
+  {
+    "id": 17,
+    "name": "Software Engineering",
+    "teacherId": 18
+  },
+  {
+    "id": 18,
+    "name": "Database Management",
+    "teacherId": 18
+  },
+  {
+    "id": 19,
+    "name": "Web Development",
+    "teacherId": 18
+  },
+  {
+    "id": 20,
+    "name": "Machine Learning",
+    "teacherId": 18
+  }
+]

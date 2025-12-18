@@ -1,0 +1,703 @@
+[
+  {
+    "id": 1,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 85,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 2,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 90,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 3,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 85,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 4,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 78,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 5,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 92,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 6,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 88,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 7,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 95,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 8,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 80,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 9,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 87,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 10,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 91,
+    "date": "2023-05-15"
+  },
+  {
+    "id": 11,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 88,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 12,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 92,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 13,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 87,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 14,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 80,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 15,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 94,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 16,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 90,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 17,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 97,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 18,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 82,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 19,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 89,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 20,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 93,
+    "date": "2023-06-15"
+  },
+  {
+    "id": 21,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 90,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 22,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 95,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 23,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 89,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 24,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 82,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 25,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 96,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 26,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 92,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 27,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 99,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 28,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 84,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 29,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 91,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 30,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 95,
+    "date": "2023-07-15"
+  },
+  {
+    "id": 31,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 87,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 32,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 91,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 33,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 86,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 34,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 79,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 35,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 93,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 36,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 89,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 37,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 96,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 38,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 81,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 39,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 88,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 40,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 92,
+    "date": "2023-08-15"
+  },
+  {
+    "id": 41,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 89,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 42,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 93,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 43,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 88,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 44,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 81,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 45,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 95,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 46,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 91,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 47,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 98,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 48,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 83,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 49,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 90,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 50,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 94,
+    "date": "2023-09-15"
+  },
+  {
+    "id": 51,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 91,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 52,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 96,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 53,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 90,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 54,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 83,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 55,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 97,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 56,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 93,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 57,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 100,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 58,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 85,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 59,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 92,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 60,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 96,
+    "date": "2023-10-15"
+  },
+  {
+    "id": 61,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 88,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 62,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 94,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 63,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 87,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 64,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 80,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 65,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 95,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 66,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 90,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 67,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 97,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 68,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 82,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 69,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 89,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 70,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 93,
+    "date": "2023-11-15"
+  },
+  {
+    "id": 71,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 94,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 72,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 97,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 73,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 91,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 74,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 85,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 75,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 98,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 76,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 94,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 77,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 100,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 78,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 87,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 79,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 93,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 80,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 96,
+    "date": "2023-12-15"
+  },
+  {
+    "id": 81,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 96,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 82,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 99,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 83,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 93,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 84,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 87,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 85,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 100,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 86,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 96,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 87,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 102,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 88,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 89,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 89,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 95,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 90,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 98,
+    "date": "2024-01-15"
+  },
+  {
+    "id": 91,
+    "studentId": 2,
+    "subject": "Math",
+    "grade": 98,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 92,
+    "studentId": 2,
+    "subject": "Science",
+    "grade": 101,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 93,
+    "studentId": 8,
+    "subject": "Math",
+    "grade": 95,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 94,
+    "studentId": 11,
+    "subject": "History",
+    "grade": 89,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 95,
+    "studentId": 2,
+    "subject": "English",
+    "grade": 102,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 96,
+    "studentId": 8,
+    "subject": "Geography",
+    "grade": 98,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 97,
+    "studentId": 11,
+    "subject": "Art",
+    "grade": 104,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 98,
+    "studentId": 2,
+    "subject": "PE",
+    "grade": 91,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 99,
+    "studentId": 8,
+    "subject": "Music",
+    "grade": 97,
+    "date": "2024-02-15"
+  },
+  {
+    "id": 100,
+    "studentId": 11,
+    "subject": "Chemistry",
+    "grade": 100,
+    "date": "2024-02-15"
+  }
+]
+  {

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Class 1A",
+    "teacherId": 2,
+    "subject": "Math",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 2,
+    "name": "Class 1B",
+    "teacherId": 3,
+    "subject": "Science",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 3,
+    "name": "Class 2A",
+    "teacherId": 9,
+    "subject": "History",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 4,
+    "name": "Class 2B",
+    "teacherId": 12,
+    "subject": "English",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 5,
+    "name": "Class 3A",
+    "teacherId": 3,
+    "subject": "Geography",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 6,
+    "name": "Class 3B",
+    "teacherId": 9,
+    "subject": "Art",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 7,
+    "name": "Class 4A",
+    "teacherId": 12,
+    "subject": "PE",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 8,
+    "name": "Class 4B",
+    "teacherId": 3,
+    "subject": "Music",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 9,
+    "name": "Class 5A",
+    "teacherId": 9,
+    "subject": "Chemistry",
+    "schoolName": "Sample School"
+  },
+  {
+    "id": 10,
+    "name": "Class 5B",
+    "teacherId": 12,
+    "subject": "Physics",
+    "schoolName": "Sample School"
+  }
+]
