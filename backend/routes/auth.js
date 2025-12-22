@@ -5,6 +5,7 @@ const path = require("path");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
+const auth = require("../middleware/auth");
 
 const upload = multer({ dest: "uploads/" });
 
@@ -31,7 +32,8 @@ router.post("/login", async (req, res) => {
     }
 
     const usersPath = path.join(__dirname, "..", "data", "users.json");
-    const raw = fs.readFileSync(usersPath, "utf8");
+    let raw = fs.readFileSync(usersPath, "utf8");
+    if (raw.charCodeAt(0) === 0xfeff) raw = raw.slice(1);
     const users = JSON.parse(raw);
 
     const user = users.find(
@@ -255,14 +257,21 @@ router.post(
 // GET /me - Get current user info
 router.get("/me", async (req, res) => {
   try {
-    const token = req.headers.authorization?.split(" ")[1];
+    const token = req.header("Authorization")?.replace("Bearer ", "");
     if (!token) {
       return res.status(401).json({ message: "No token provided" });
     }
 
-    const decoded = jwt.verify(token, "secretkey");
+    let decoded;
+    try {
+      decoded = jwt.verify(token, "secretkey");
+    } catch (error) {
+      return res.status(401).json({ message: "Invalid token" });
+    }
+
     const usersPath = path.join(__dirname, "..", "data", "users.json");
-    const raw = fs.readFileSync(usersPath, "utf8");
+    let raw = fs.readFileSync(usersPath, "utf8");
+    if (raw.charCodeAt(0) === 0xfeff) raw = raw.slice(1);
     const users = JSON.parse(raw);
 
     const user = users.find((u) => u.id === decoded.id);

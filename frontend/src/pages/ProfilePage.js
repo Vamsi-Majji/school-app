@@ -70,11 +70,24 @@ const ProfilePage = ({ role }) => {
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        navigate("/login");
+        return;
+      }
+
       const response = await fetch("/api/auth/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
+
+      if (response.status === 401) {
+        // Token expired or invalid, redirect to login
+        localStorage.removeItem("token");
+        navigate("/login");
+        return;
+      }
+
       if (response.ok) {
         const user = await response.json();
         setUserData(user);

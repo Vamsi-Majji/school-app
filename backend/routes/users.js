@@ -4,6 +4,7 @@ const auth = require("../middleware/auth");
 const fs = require("fs").promises;
 const path = require("path");
 const fsSync = require("fs");
+const jwt = require("jsonwebtoken");
 
 const usersPath = path.join(__dirname, "../data/users.json");
 const pendingApplicationsPath = path.join(
@@ -14,7 +15,8 @@ const classesPath = path.join(__dirname, "../data/classes.json");
 
 // Helper function to read users
 const readUsers = async () => {
-  const data = await fs.readFile(usersPath, "utf8");
+  let data = await fs.readFile(usersPath, "utf8");
+  if (data.charCodeAt(0) === 0xfeff) data = data.slice(1);
   return JSON.parse(data);
 };
 
@@ -45,7 +47,8 @@ const writePendingApplications = async (applications) => {
 // Helper function to read classes
 const readClasses = async () => {
   try {
-    const data = await fs.readFile(classesPath, "utf8");
+    let data = await fs.readFile(classesPath, "utf8");
+    if (data.charCodeAt(0) === 0xfeff) data = data.slice(1);
     return JSON.parse(data);
   } catch (error) {
     // If file doesn't exist, return empty array
@@ -91,9 +94,21 @@ router.get("/:id", auth, async (req, res) => {
 });
 
 // Get pending applications (Principal only)
-router.get("/applications/pending", auth, async (req, res) => {
+router.get("/applications/pending", async (req, res) => {
   try {
-    if (req.user.role !== "principal") {
+    const token = req.header("Authorization")?.replace("Bearer ", "");
+    if (!token) {
+      return res.status(401).json({ message: "No token provided" });
+    }
+
+    let decoded;
+    try {
+      decoded = jwt.verify(token, "secretkey");
+    } catch (error) {
+      return res.status(401).json({ message: "Invalid token" });
+    }
+
+    if (decoded.role !== "principal") {
       return res
         .status(403)
         .json({ message: "Access denied. Principal only." });
@@ -101,10 +116,7 @@ router.get("/applications/pending", auth, async (req, res) => {
 
     const users = await readUsers();
     const pendingApplications = users
-      .filter(
-        (user) =>
-          user.status === "pending" && user.schoolName === req.user.schoolName
-      )
+      .filter((user) => user.status === "pending")
       .sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
     res.json(pendingApplications);
   } catch (error) {
